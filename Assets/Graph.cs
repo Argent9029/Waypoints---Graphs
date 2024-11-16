@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class Graph
 {
-    List<Edge> edges = new List<Edge>();
-    List<Node> nodes = new List<Node>();
-    List<Node> pathList = new List<Node>();
+    public List<Edge> edges = new List<Edge>();
+    public List<Node> nodes = new List<Node>();
+    public List<Node> pathList = new List<Node>();
 
     public Graph()
     {
@@ -44,9 +44,15 @@ public class Graph
         return null;
     }
 
-    public bool AStar (GameObject starId, GameObject endId)
+    public bool AStar (GameObject startId, GameObject endId)
     {
-        Node start = FindNode(starId);
+        if (startId == endId)
+        {
+            pathList.Clear();
+            return false;
+        }
+        
+        Node start = FindNode(startId);
         Node end = FindNode(endId);
 
         if (start != null || end != null)
