@@ -29,6 +29,13 @@ public class FollowWP2 : MonoBehaviour
         currentWP = 0;
     }
 
+    public void GoToRuin()
+    {
+        g.AStar(currentNode, wps[1]);
+        g.AStar(currentNode, wps[1]);
+        currentWP = 0;
+    }
+
     // Update is called once per frame
     void Update()
     {
