@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class Node
 {
-    public List<Edge> edgelist = new List<Edge>();
+    public List<Edge> edgeList = new List<Edge>();
+
     public Node path = null;
+
     GameObject id;
 
     public float f, g, h;
+
     public Node cameFrom;
 
     public Node(GameObject i)
